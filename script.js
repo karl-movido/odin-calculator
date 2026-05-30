@@ -76,12 +76,12 @@ function handleOperator(value) {
 function handleDecimal() {
   if (!op) {
     if (!num1.includes(".")) {
-      num1 += value;
+      num1 += ".";
       updateDisplay(num1);
     }
   } else {
     if (!num2.includes(".")) {
-      num2 += value;
+      num2 += ".";
       updateDisplay(num2);
     }
   }
