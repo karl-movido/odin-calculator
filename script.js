@@ -113,6 +113,9 @@ controls.addEventListener("click", (e) => {
     if (value === "=") {
       const result = operate(Number(num1), Number(num2), op);
 
+      previousDisplay = `${num1} ${op} ${num2}`;
+
+      updatePrevious(previousDisplay);
       updateDisplay(result);
 
       num1 = result.toString();
@@ -124,4 +127,8 @@ controls.addEventListener("click", (e) => {
 
 function updateDisplay(value) {
   document.getElementById("result").innerHTML = value;
+}
+
+function updatePrevious(value) {
+  document.getElementById("history").innerHTML = value;
 }
