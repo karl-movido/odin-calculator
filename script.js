@@ -96,6 +96,20 @@ controls.addEventListener("click", (e) => {
       }
     }
 
+    if (value === ".") {
+      if (!op) {
+        if (!num1.includes(".")) {
+          num1 += value;
+          updateDisplay(num1);
+        }
+      } else {
+        if (!num2.includes(".")) {
+          num2 += value;
+          updateDisplay(num2);
+        }
+      }
+    }
+
     if (value === "=") {
       const result = operate(Number(num1), Number(num2), op);
 
