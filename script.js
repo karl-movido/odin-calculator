@@ -55,6 +55,23 @@ controls.addEventListener("click", (e) => {
   if (e.target.tagName === "BUTTON") {
     const value = e.target.dataset.value;
 
+    if (value === "clear") {
+      num1 = "";
+      num2 = "";
+      op = "";
+      updateDisplay(0);
+    }
+
+    if (value === "del") {
+      if (!op) {
+        num1 = num1.slice(0, -1);
+        updateDisplay(num1 || "0");
+      } else {
+        num2 = num2.slice(0, -1);
+        updateDisplay(num2 || "0");
+      }
+    }
+
     if (!isNaN(value)) {
       if (!op) {
         num1 += value;
